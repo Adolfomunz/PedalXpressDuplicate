@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    font-family: Arial;
+}
+.sau2 {
+    padding: 40px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.card {
+    height: 500px;
+}
+
+.card-img-top {
+    height: 300px; 
+    width: 100%; 
+    object-fit: cover; 
+}
+
+.card-body {
+    height: 60%; 
+    overflow: auto; 
+}
+
+
+/* por posibles cambios a otro css*/
+.container .pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem; /* Ajusta este valor según sea necesario */
+}
+
+
