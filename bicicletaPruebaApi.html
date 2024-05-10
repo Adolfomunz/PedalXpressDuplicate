@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -32,11 +32,11 @@
             <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProductos" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Productos
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownProductos">
               <li><a class="dropdown-item" href="bicicleta.html">Bicicletas</a></li>
               <li><a class="dropdown-item" href="componentes.html">Componentes</a></li>
               <li><a class="dropdown-item" href="equipamiento.html">Equipamiento</a></li>
@@ -49,13 +49,13 @@
             <a class="nav-link" href="carrito.html">Carrito de compras</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUsuario" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Usuario
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="HistorialCompras.html">Hisotrial de compra</a></li>
-              <li><a class="dropdown-item" href="PerfilUsuario.html">Informacion personal</a></li>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUsuario">
+              <li><a class="dropdown-item" href="HistorialCompras.html">Historial de compra</a></li>
+              <li><a class="dropdown-item" href="PerfilUsuario.html">Información personal</a></li>
             </ul>
           </li>
         </ul>
@@ -66,6 +66,7 @@
       </div>
     </div>
   </nav>
+
   <!-- Contenido principal -->
   <div class="container">
     <h1 class="mt-5 mb-4">Productos Disponibles</h1>
@@ -210,7 +211,15 @@
     </ul>
   </div>
 
-
+  <div class="container mt-3">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="StockPag3.html">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="StockPag1.html">1</a></li>
+        <li class="page-item"><a class="page-link" href="StockPag2.html">2</a></li>
+        <li class="page-item"><a class="page-link" href="StockPag3.html">3</a></li>
+        <li class="page-item"><a class="page-link" href="StockPag2.html">Next</a></li>
+    </ul>
+</div>
   <!-- Enlaces a los archivos JS de Bootstrap y jQuery (si es necesario) -->
   <script src="js/bootstrap.bundle.min.js"></script>
 
@@ -221,6 +230,9 @@
     crossorigin="anonymous"></script>
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/querys.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 
