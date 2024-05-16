@@ -102,3 +102,10 @@ p
     color: inherit; /* Usa el color de texto predeterminado */
     text-decoration: none; /* Elimina el subrayado del enlace */
 }
+
+.btn-custom {
+    transition: background-color 0.3s ease;
+}
+.btn-custom:hover {
+    background-color: #021e47;
+}

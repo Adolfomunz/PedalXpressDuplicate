@@ -102,32 +102,9 @@
             </div>
         </div>
     </div>
-    <script>
-        function habilitarEdicion() {
-            var elementosEditable = document.querySelectorAll('.form-control');
-            elementosEditable.forEach(function(elemento) {
-                elemento.contentEditable = true;
-            });
-            document.querySelector('.btn-primary').classList.add('d-none');
-            document.querySelector('.btn-success').classList.remove('d-none');
-        }
-
-        function guardarCambios() {
-            var elementosEditable = document.querySelectorAll('.form-control');
-            elementosEditable.forEach(function(elemento) {
-                elemento.contentEditable = false;
-            });
-            document.querySelector('.btn-primary').classList.remove('d-none');
-            document.querySelector('.btn-success').classList.add('d-none');
-        }
-    </script>
-
-
-    
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="js/perfilUsuario.js"></script>
 </body>
 </html>
