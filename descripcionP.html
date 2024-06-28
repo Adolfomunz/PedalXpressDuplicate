@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/estiloDesc.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="{% static 'css/estiloDesc.css' %}">
 </head>
 
 <body>
@@ -21,8 +19,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'img/logo.jpg' %}" width="40" height="40" class="d-inline-block align-top" alt="">
                 <span class="ms-2">PedalXpress</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -33,33 +31,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProductos" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Productos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownProductos">
-                            <li><a class="dropdown-item" href="bicicleta.html">Bicicletas</a></li>
-                            <li><a class="dropdown-item" href="componentes.html">Componentes</a></li>
-                            <li><a class="dropdown-item" href="equipamiento.html">Equipamiento</a></li>
-                        </ul>
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Admi.html">Administración</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'bicicleta' %}">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="carrito.html">Carrito de compras</a>
+                        <a class="nav-link" href="{% url 'Admin' %}">Administración</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'carritoCompra' %}">Carrito de compras</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUsuario" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Usuario
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownUsuario">
-                            <li><a class="dropdown-item" href="HistorialCompras.html">Historial de compra</a></li>
-                            <li><a class="dropdown-item" href="PerfilUsuario.html">Información personal</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'HistorialCompra' %}">Historial de compra</a></li>
+                            <li><a class="dropdown-item" href="{% url 'PerfilUsuario' %}">Información personal</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -78,16 +68,16 @@
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/descripcion/foto2.png" class="d-block w-100" alt="Imagen 1">
+                            <img src="{% static 'img/descripcion/foto2.png' %}" class="d-block w-100" alt="Imagen 1">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/descripcion/foto1.png" class="d-block w-100" alt="Imagen 2">
+                            <img src="{% static 'img/descripcion/foto1.png' %}" class="d-block w-100" alt="Imagen 2">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/descripcion/foto3.png" class="d-block w-100" alt="Imagen 3">
+                            <img src="{% static 'img/descripcion/foto3.png' %}" class="d-block w-100" alt="Imagen 3">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/descripcion/foto4.png" class="d-block w-100" alt="Imagen 4">
+                            <img src="{% static 'img/descripcion/foto4.png' %}" class="d-block w-100" alt="Imagen 4">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -105,29 +95,30 @@
             <div class="col-lg-6">
                 <h2>Bicicleta Mountain Bike Glory Advanced Pro MX 0</h2>
                 <p class="lead smaller-text">Respaldada por su pedigrí en los campeonatos del mundo, esta bicicleta de descenso full carbon vuelve a la acción con 200 mm de suspensión trasera Maestro rediseñada y múltiples formas de ajustar la geometría,
-                                la posición del ciclista y el tamaño de la rueda trasera. Todo es nuevo, lleva años gestándose y llega directa a los podios de las carreras de todo el mundo.</p>
+                    la posición del ciclista y el tamaño de la rueda trasera. Todo es nuevo, lleva años gestándose y llega directa a los podios de las carreras de todo el mundo.</p>
                 <p>Detalles adicionales del producto:</p>
                 <ul>
-                    <li>Colores: Shoreline/Carbon </li>
+                    <li>Colores: Shoreline/Carbon</li>
                     <li>Cuadro: Advanced-grade composite front and rear triangles, 200mm Maestro</li>
                     <li>Horquilla: Fox 40 Factory, GRIP2 damper, 203mm, 20x110, custom tuned for Giant</li>
                 </ul>
                 <span id="loader" class="spinner-grow spinner-grow-sm"></span>
                 <span class="textloader">Cargando...</span>
                 <h5 id="dolar1"></h5>
-                <button onclick="window.location.href='pago.html'" class="btn btn-primary">Comprar</button>
-                <button onclick="window.location.href='carrito.html'" class="btn btn-success">Agregar al carrito</button>
+                <button onclick="window.location.href='{% url 'pago' %}'" class="btn btn-primary">Comprar</button>
+                <form method="post" action="{% url 'carritoCompra' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="producto_id" value="1"> <!-- Ajusta el valor según el producto -->
+                    <button type="submit" class="btn btn-success">Agregar al carrito</button>
+                </form>
             </div>
         </div>
     </div>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <script src="js/jquery-3.7.1.min.js"></script>
-        <script src="js/querys.js"></script>
-
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/querys.js' %}"></script>
 </body>
-
 </html>

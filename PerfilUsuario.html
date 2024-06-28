@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -16,7 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="img/logo.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+                <img src="{% static 'img/logo.jpg' %}" width="40" height="40" class="d-inline-block align-top" alt="">
                 <span class="ms-2">PedalXpress</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -27,24 +28,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Productos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="bicicleta.html">Bicicletas</a></li>
-                            <li><a class="dropdown-item" href="componentes.html">Componentes</a></li>
-                            <li><a class="dropdown-item" href="equipamiento.html">Equipamiento</a></li>
-                        </ul>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'bicicleta' %}">Productos</a>
+                    </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Admi.html">Administración</a>
+                        <a class="nav-link" href="{% url 'Admin' %}">Administración</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="carrito.html">Carrito de compras</a>
+                        <a class="nav-link" href="{% url 'carritoCompra' %}">Carrito de compras</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -52,8 +47,8 @@
                             Usuario
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="HistorialCompras.html">Hisotrial de compra</a></li>
-                            <li><a class="dropdown-item" href="PerfilUsuario.html">Informacion personal</a></li>
+                            <li><a class="dropdown-item" href="{% url 'HistorialCompra' %}">Historial de compra</a></li>
+                            <li><a class="dropdown-item" href="{% url 'PerfilUsuario' %}">Informacion personal</a></li>
                         </ul>
                     </li>
                 </ul>

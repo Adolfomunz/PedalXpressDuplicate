@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/estiloAdmin.css">
+        <link rel="stylesheet" href="{% static 'css/estiloAdmin.css' %}">
+
 </head>
 
 <body>
@@ -18,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="img/logo.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+                <img src="{% static 'img/logo.jpg' %}" width="40" height="40" class="d-inline-block align-top" alt="">
                 <span class="ms-2">PedalXpress</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -29,24 +31,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Productos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="bicicleta.html">Bicicletas</a></li>
-                            <li><a class="dropdown-item" href="componentes.html">Componentes</a></li>
-                            <li><a class="dropdown-item" href="equipamiento.html">Equipamiento</a></li>
-                        </ul>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'bicicleta' %}">Productos</a>
+                    </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Admi.html">Administración</a>
+                        <a class="nav-link" href="{% url 'Admin' %}">Administración</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="carrito.html">Carrito de compras</a>
+                        <a class="nav-link" href="{% url 'carritoCompra' %}">Carrito de compras</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -54,8 +50,8 @@
                             Usuario
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="HistorialCompras.html">Hisotrial de compra</a></li>
-                            <li><a class="dropdown-item" href="PerfilUsuario.html">Informacion personal</a></li>
+                            <li><a class="dropdown-item" href="{% url 'HistorialCompra' %}">Historial de compra</a></li>
+                            <li><a class="dropdown-item" href="{% url 'PerfilUsuario' %}">Informacion personal</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -76,26 +72,23 @@
                         <h3 class="text-center">Inicio sesión Administrador</h3>
                     </div>
                     <div class="card-body">
-                        <form action="AdminOpciones.html" method="get" class="needs-validation" id="loginForm" novalidate>
+                        <form id="loginForm" novalidate>
                             <div class="mb-3 mt-3">
-                                <label for="idcorreo" class="form-label">Correo Electrónico:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Ingrese email" name="idcorreo"
-                                    required>
-                                <div class="invalid-feedback invalid-feedback-email">Por favor, ingrese un correo electrónico válido.</div>
+                                <label for="email" class="form-label">Correo Electrónico:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Ingrese email" required>
+                                <div class="invalid-feedback">Por favor, ingrese un correo electrónico válido.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="idpass1" class="form-label">Contraseña</label>
-
-                                <input type="password" class="form-control" name="pass1" id="idpass1" placeholder="Ingrese contraseña" required />
-                                <div class="invalid-feedback">Ingrese contraseña</div>
-
+                                <input type="password" class="form-control" id="idpass1" placeholder="Ingrese contraseña" required>
+                                <div class="invalid-feedback">Ingrese contraseña.</div>
                             </div>
                             <div class="form-check mb-3">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="remember"> Recordarme
+                                    <input class="form-check-input" type="checkbox"> Recordarme
                                 </label>
                             </div>
-                            <a href="AdminOpciones.html" class="btn btn-primary btn-block mt-2">Iniciar sesión</a>
+                            <button type="button" class="btn btn-primary btn-block mt-2" onclick="validateAndRedirect()">Iniciar sesión</button>
                         </form>
                     </div>
                 </div>
@@ -106,7 +99,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="js/validacion_IniciarSesionAdmin.js"></script>
+    <script src="{% static 'js/validacion_IniciarSesionAdmin.js' %}"></script>
+
   
 </body>
 </html>
